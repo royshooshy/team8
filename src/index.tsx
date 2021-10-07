@@ -1,12 +1,49 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+import 'bulma/css/bulma.min.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+import EmployeesList from './employees-list/employees-list';
+import TodoList from './todo-list/todo-list';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+   <Router>
+    <div>
+      <nav>
+        <ul>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/employees-list">Employees List</Link>
+          </li>
+          <li>
+            <Link to="/todo-list">Todo List</Link>
+          </li>
+        </ul>
+      </nav>
+
+      <Switch>
+        <Route path="/employees-list">
+          <EmployeesList />
+        </Route>
+        <Route path="/todo-list">
+          <TodoList />
+        </Route>
+        <Route path="/">
+          <App />
+        </Route>
+      </Switch>
+    </div>
+  </Router>
   </React.StrictMode>,
   document.getElementById('root')
 );
