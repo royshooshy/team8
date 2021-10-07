@@ -1,6 +1,4 @@
 
-
-
 function TodoList() {
   return (
     <div>
