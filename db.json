@@ -1,24 +1,94 @@
 {
   "employees": [
-    { "id": 1, "name": "Roy Shooshy", "status": 1 },
-    { "id": 2, "name": "Inbar Zohar", "status": 2 },
-    { "id": 3, "name": "Inbar Zohar", "status": 3 },
-    { "id": 4, "name": "Inbar Zohar", "status": 4 },
-    { "id": 5, "name": "Inbar Zohar", "status": 3 },
-    { "id": 6, "name": "Inbar Zohar", "status": 2 },
-    { "id": 7, "name": "Inbar Zohar", "status": 1 },
-    { "id": 8, "name": "Inbar Zohar", "status": 2 },
-    { "id": 9, "name": "Inbar Zohar", "status": 3 },
-    { "id": 10, "name": "Inbar Zohar", "status": 4 },
-    { "id": 11, "name": "Inbar Zohar", "status": 1 },
-    { "id": 12, "name": "Inbar Zohar", "status": 2 },
-    { "id": 13, "name": "Inbar Zohar", "status": 3 }
+    {
+      "id": 1,
+      "name": "Romi Cohen",
+      "status": 3
+    },
+    {
+      "id": 2,
+      "name": "Inbar Zohar",
+      "status": 4
+    },
+    {
+      "id": 3,
+      "name": "Inbar Zohar",
+      "status": 3
+    },
+    {
+      "id": 4,
+      "name": "Inbar Zohar",
+      "status": 4
+    },
+    {
+      "id": 5,
+      "name": "Inbar Zohar",
+      "status": 3
+    },
+    {
+      "id": 6,
+      "name": "Inbar Zohar",
+      "status": 2
+    },
+    {
+      "id": 7,
+      "name": "Inbar Zohar",
+      "status": 1
+    },
+    {
+      "id": 8,
+      "name": "Inbar Zohar",
+      "status": 2
+    },
+    {
+      "id": 9,
+      "name": "Inbar Zohar",
+      "status": 3
+    },
+    {
+      "id": 10,
+      "name": "Inbar Zohar",
+      "status": 4
+    },
+    {
+      "id": 11,
+      "name": "Inbar Zohar",
+      "status": 1
+    },
+    {
+      "id": 12,
+      "name": "Inbar Zohar",
+      "status": 2
+    },
+    {
+      "id": 13,
+      "name": "Inbar Zohar",
+      "status": 3
+    }
   ],
-  "employees-statuses":[
-    { "id": 1, "value": "Working"},
-    { "id": 2, "value": "OnVacation"},
-    { "id": 3, "value": "LunchTime"},
-    { "id": 4, "value": "BusinessTrip"}
+  "employees-statuses": [
+    {
+      "id": 1,
+      "value": "Working"
+    },
+    {
+      "id": 2,
+      "value": "OnVacation"
+    },
+    {
+      "id": 3,
+      "value": "LunchTime"
+    },
+    {
+      "id": 4,
+      "value": "BusinessTrip"
+    }
   ],
-  "todos": [{ "id": 1, "text": "json-server", "status": 1 }]
+  "todos": [
+    {
+      "id": 1,
+      "text": "json-server",
+      "status": 1
+    }
+  ]
 }
