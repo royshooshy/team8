@@ -1,9 +1,10 @@
 {
-    "posts": [
-      { "id": 1, "title": "json-server", "author": "typicode" }
+    "employees": [
+      { "id": 1, "name": "Roy Shooshy", "status": 2 },
+      { "id": 2, "name": "Inbar Zohar", "status": 3 }
     ],
-    "comments": [
-      { "id": 1, "body": "some comment", "postId": 1 }
-    ],
-    "profile": { "name": "typicode" }
+    "todos": [
+      { "id": 1, "text": "json-server", "status": 1}
+    ]
+   
   }
