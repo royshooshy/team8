@@ -17,8 +17,6 @@ ReactDOM.render(
   <React.StrictMode>
    <Router>
     <div>
-     
-
       <Switch>
         <Route path="/employees-list">
           <EmployeesList />
