@@ -14,7 +14,7 @@ function ListItem(props: any) {
         <div className="card-content">
           <div className="media">
             <div className="media-left">
-              <figure className="image is-96x96">
+              <figure className="image is-48x48">
                 <img
                   className="circled"
                   src="https://avatars.dicebear.com/api/initials/john%20doe.svg"
@@ -26,7 +26,7 @@ function ListItem(props: any) {
               onClick={() => toggleStatusDD(!isStatusDDOpen)}
               className="media-content"
             >
-              <span className="title is-4 no-padding">{listItem?.text}</span>
+              <span className="title is-size-6">{listItem?.text}</span>
 
               <div className="is-4">
                 <div

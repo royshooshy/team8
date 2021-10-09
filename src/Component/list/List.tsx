@@ -14,15 +14,7 @@ function List(props: any) {
   };
   return (
     <div className="container">
-      <div className="section">
-        <div className="columns">
-          <div className="column has-text-centered">
-            <h1 className="title">Bulma Card Layout Template</h1>
-          </div>
-        </div>
-        <div className="column has-text-centered">
-          <h1 className="title">Bulma Card Layout Template</h1>
-        </div>
+      <div className="section pt-0">
         <div className="row columns is-multiline">
           {listItems.map((item: IListItem) => (
             <ListItem

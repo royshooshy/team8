@@ -18,19 +18,7 @@ ReactDOM.render(
   <React.StrictMode>
    <Router>
     <div>
-      <nav>
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/employees-list">Employees List</Link>
-          </li>
-          <li>
-            <Link to="/todo-list">Todo List</Link>
-          </li>
-        </ul>
-      </nav>
+     
 
       <Switch>
         <Route path="/employees-list">
