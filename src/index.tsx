@@ -9,7 +9,6 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
 } from "react-router-dom";
 import EmployeesList from './employees-list/employees-list';
 import TodoList from './todo-list/todo-list';
