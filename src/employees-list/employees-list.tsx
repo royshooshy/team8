@@ -8,6 +8,7 @@ import List from "../Component/list/List";
 import { IEmployeeStatus } from "./employee-status.interface";
 import ListFilter from "../Component/list-filter/list-filter";
 import ListItemEdit from "../Component/list-item/list-item-edit";
+import { Link } from "react-router-dom";
 
 function EmployeesList() {
   const [employees, setEmployees] = useState<IEmployee[]>([]);
@@ -132,7 +133,7 @@ function EmployeesList() {
         <div className="navbar-end">
           <div className="navbar-item">
             <div className="buttons">
-              <button className="button is-info is-outlined">Log Out</button>
+            <Link to="/" className="button is-info is-outlined">Log Out</Link>
             </div>
           </div>
         </div>
