@@ -24,7 +24,6 @@ function EmployeesList() {
     );
     Promise.all([getEmployyees, getEmployeeStatuses]).then(
       ([employees, statuses]) => {
-        debugger
         setEmployees(employees.data);
         setListItems(
           employees.data.map((emp) => {
@@ -63,37 +62,57 @@ function EmployeesList() {
   }) => {
     setListItems(
       employees
-      .filter((e) => {
-        if (data.status.id !== -1) {
-          return e.status === data.status.id;
-        } else {
-          return e.status === e.status;
-        }
-      }).filter((e) => {
-        if (data.str !== "") {
-          return e.name.toLowerCase().includes(data.str.toLowerCase());
-        } else {
-          return e.name === e.name;
-        }
-      })
-      .map((emp) => {
-        return {
-          id: emp.id,
-          text: emp.name,
-          // image
-          selectedState: emp.status,
-          states: empStatuses.map((s) => {
-            return { id: s.id, value: s.value };
-          }),
-        };
-      })
+        .filter((e) => {
+          if (data.status.id !== -1) {
+            return e.status === data.status.id;
+          } else {
+            return e.status === e.status;
+          }
+        })
+        .filter((e) => {
+          if (data.str !== "") {
+            return e.name.toLowerCase().includes(data.str.toLowerCase());
+          } else {
+            return e.name === e.name;
+          }
+        })
+        .map((emp) => {
+          return {
+            id: emp.id,
+            text: emp.name,
+            // image
+            selectedState: emp.status,
+            states: empStatuses.map((s) => {
+              return { id: s.id, value: s.value };
+            }),
+          };
+        })
     );
-
-  
   };
 
   const handleCreateUser = (data: IListItem) => {
-  
+    axios
+      .post<any>(`${configData.SERVER_URL}/employees`, {
+        name: data.text,
+        status: data.selectedState ? +data.selectedState : 1,
+      })
+      .then((emp) => {
+        const newEmps = [...employees, emp.data as IEmployee];
+        setEmployees(newEmps);
+        setListItems(
+          newEmps.map((emp) => {
+            return {
+              id: emp.id,
+              text: emp.name,
+              // image
+              selectedState: emp.status,
+              states: empStatuses.map((s) => {
+                return { id: s.id, value: s.value };
+              }),
+            };
+          })
+        );
+      });
   };
 
   return (
