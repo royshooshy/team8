@@ -9,16 +9,13 @@ import { IEmployeeStatus } from "./employee-status.interface";
 import ListFilter from "../Component/list-filter/list-filter";
 import ListItemEdit from "../Component/list-item/list-item-edit";
 
-
 function EmployeesList() {
-
   const [employees, setEmployees] = useState<IEmployee[]>([]);
   const [listItems, setListItems] = useState<IListItem[]>([]);
   const [empStatuses, setEmpStatuses] = useState<
     { id: number; value: string }[]
   >([]);
   useEffect(() => {
-
     const getEmployyees = axios.get<IEmployee[]>(
       `${configData.SERVER_URL}/employees`
     );
@@ -27,6 +24,7 @@ function EmployeesList() {
     );
     Promise.all([getEmployyees, getEmployeeStatuses]).then(
       ([employees, statuses]) => {
+        debugger
         setEmployees(employees.data);
         setListItems(
           employees.data.map((emp) => {
@@ -59,12 +57,43 @@ function EmployeesList() {
     getEmployyees.then((data) => {});
   };
 
-  const handleFilterChange = (data: { id: number; value: string }) => {
-    debugger;
-  };
+  const handleFilterChange = (data: {
+    str: string;
+    status: { id: number; value: string };
+  }) => {
+    setListItems(
+      employees
+      .filter((e) => {
+        if (data.status.id !== -1) {
+          return e.status === data.status.id;
+        } else {
+          return e.status === e.status;
+        }
+      }).filter((e) => {
+        if (data.str !== "") {
+          return e.name.toLowerCase().includes(data.str.toLowerCase());
+        } else {
+          return e.name === e.name;
+        }
+      })
+      .map((emp) => {
+        return {
+          id: emp.id,
+          text: emp.name,
+          // image
+          selectedState: emp.status,
+          states: empStatuses.map((s) => {
+            return { id: s.id, value: s.value };
+          }),
+        };
+      })
+    );
+
   
+  };
+
   const handleCreateUser = (data: IListItem) => {
-    debugger;
+  
   };
 
   return (

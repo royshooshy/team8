@@ -6,7 +6,7 @@ const ListFilter = (props: any) => {
   const [filterSelection, setFilterSelection] = useState<{
     str: string;
     status: { id: number; value: string };
-  }>();
+  }>({str:"",status:{ id: -1, value: "Select Status" }});
   const [statuses, setStatuses] = useState<{ id: number; value: string }[]>([]);
   const [isStatusDDOpen, toggleStatusDD] = useState<boolean>(false);
   const [isModalOpen, toggleModal] = useState<boolean>(false);
