@@ -9,13 +9,16 @@ import { IEmployeeStatus } from "./employee-status.interface";
 import ListFilter from "../Component/list-filter/list-filter";
 import ListItemEdit from "../Component/list-item/list-item-edit";
 
+
 function EmployeesList() {
+
   const [employees, setEmployees] = useState<IEmployee[]>([]);
   const [listItems, setListItems] = useState<IListItem[]>([]);
   const [empStatuses, setEmpStatuses] = useState<
     { id: number; value: string }[]
   >([]);
   useEffect(() => {
+
     const getEmployyees = axios.get<IEmployee[]>(
       `${configData.SERVER_URL}/employees`
     );
@@ -57,10 +60,11 @@ function EmployeesList() {
   };
 
   const handleFilterChange = (data: { id: number; value: string }) => {
-  
+    debugger;
   };
+  
   const handleCreateUser = (data: IListItem) => {
-   
+    debugger;
   };
 
   return (
