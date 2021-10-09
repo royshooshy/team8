@@ -21,4 +21,10 @@
 
 
 
+6. technical debt:
+    add delete item from list
+
+
+
+
 
